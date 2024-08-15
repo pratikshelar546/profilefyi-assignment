@@ -2,7 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/commanComponents/NavBar/Navbar";
 import { CardProvider } from "@/ContextAPI/CartContext";
-
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <CardProvider>
           <Navbar />
           <main>{children}</main>
+          <ToastContainer position="bottom-center" autoClose={"2000"} />
         </CardProvider>
       </body>
     </html>
